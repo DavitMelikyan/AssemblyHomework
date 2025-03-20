@@ -13,18 +13,17 @@ main:
 	sub rsp,16
 	
 	xor rax,rax
-	mov rdi,fmt_scand
-	mov rsi, [rbp - 4]
+	mov rdi,fmt_scanf
+	lea rsi, [rbp - 4]
 	call scanf
 	
 	xor rax,rax
-        mov rdi,fmt_scand
-        mov rsi, [rbp - 8]
+        mov rdi,fmt_scanf
+        lea rsi, [rbp - 8]
         call scanf
 
-	mov rcv,[rbp - 8]
+	mov rcx,[rbp - 8]
 	mov rbx,[rbp - 4]
-	mov rbx,rax
 	mov rax,1
 L1:
 	imul rbx

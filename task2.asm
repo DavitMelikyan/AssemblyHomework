@@ -1,8 +1,8 @@
 extern printf
 extern scanf
 section .data
-	fmt_scanf dq "%d",0
-	fmt_printf dq "%d",0
+	fmt_scanf db "%d",0
+	fmt_printf db "%d",0
 section .bss
 	N resq 1
 section .text
@@ -15,7 +15,7 @@ main:
 	mov rdi,fmt_scanf
 	mov rsi, N
 	call scanf
-	mov rcx, [N]
+	mov eax, dword[N]
 	inc rcx
 CALC:
 	add rax,rbx
